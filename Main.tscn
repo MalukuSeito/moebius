@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://r07e3j4g5214"]
+
+[ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cqhriew4g5l1d" path="res://main.gd" id="1_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://cwom7w0woy2f3" path="res://Grid.png" id="2_r0du0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r0du0"]
+diffuse_texture = ExtResource("2_r0du0")
+texture_repeat = 3
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_uu6xs")
+
+[node name="The Grid" type="Polygon2D" parent="."]
+scale = Vector2(600, 600)
+texture = SubResource("CanvasTexture_r0du0")
+texture_scale = Vector2(2000, 2000)
+polygon = PackedVector2Array(0.736667, 0, 0.736667, 1.07833, 1.185, 1.07833, 1.185, 0)
+
+[node name="Player" type="Polygon2D" parent="The Grid"]
+self_modulate = Color(0.470588, 0.694118, 0.458824, 1)
+position = Vector2(0.96, 1.04)
+scale = Vector2(2, 2)
+texture = ExtResource("1_glv2v")
+polygon = PackedVector2Array(-0.00666654, 0, -0.00666666, 0.0233334, 0, 0.02, 0.00666666, 0.0233333, 0.00666678, 0, 1.19209e-07, -0.00666666)
