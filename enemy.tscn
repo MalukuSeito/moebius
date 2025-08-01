@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://byqp6ox3msoj2"]
+
+[ext_resource type="Script" uid="uid://dyoqp08g3xcom" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_7k104"]
+
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_4gyqm")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_7k104")
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)
