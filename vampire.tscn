@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://2lf1h3jvq14m"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_43os1"]
+[ext_resource type="Script" uid="uid://b2vj47ols0gsm" path="res://vampire.gd" id="2_43os1"]
+
+[node name="VampireUpgrade" instance=ExtResource("1_43os1")]
+script = ExtResource("2_43os1")
+bonus = 0.01
+base_point_cost = 25
+cost_scale = 10.0

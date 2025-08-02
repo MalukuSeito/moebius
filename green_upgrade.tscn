@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcx0vkonsuy71"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_wrlx0"]
+[ext_resource type="Script" uid="uid://bstme2x6013w" path="res://green_upgrade.gd" id="2_wrlx0"]
+
+[node name="GreenMultiplierUpgrade" instance=ExtResource("1_wrlx0")]
+script = ExtResource("2_wrlx0")
+bonus = 1
+base_point_cost = 25
+cost_scale = 10.0

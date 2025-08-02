@@ -11,12 +11,24 @@ var difficulty_scale: float = 0.02
 var fire_rate:float = 1
 var last_fire:float = 0
 var projectile_speed:float = 1
-var multiplier: int = 1
+var multiplier: int = 100
 var game_speed: float = 0.4
+var health_regen: float = 0
+var green_multiplier: int = 0
+var armor: float = 1
+var laser_count:int = 0
+var laser_reach:float = 1
+var multishot:int = 1
+var explosion_size:float = 0
+var boss_spawn_rate:float = 0
+var laserExplosion:int = 0
+var lifes:int =0
+var vampiric:float = 0
 
 var health:float = 10;
 var max_health:float = 10;
-var base_points: float = 9;
+var base_points: float = 40000;
+var green_points: float = 20000;
 
 @onready
 var player = $"The Grid/Player"
@@ -34,6 +46,9 @@ var shot:PackedScene = load("res://gun.tscn");
 var point:PackedScene = load("res://point.tscn");
 
 @onready
+var greenpoint:PackedScene = load("res://green_point.tscn");
+
+@onready
 var maxhp = $HPPanel
 @onready
 var hp =$HPPanel/HP
@@ -46,6 +61,14 @@ var basepointstext = $PointsPanel/PointsText
 var basepointspanel = $PointsPanel
 @onready
 var basepoints = $PointsPanel/Points
+
+@onready
+var greenpointstext = $GreenPoints/PointsText
+@onready
+var greenpointspanel = $GreenPoints
+@onready
+var greenpoints = $GreenPoints/Points
+
 @onready
 var upgrades = $Upgrades
 
@@ -64,6 +87,7 @@ var running = true;
 func _ready() -> void:
 	maxhp.visible = false
 	basepointspanel.visible = false
+	greenpointspanel.visible = false
 	UpgradePanel.visible = false
 	startButton.visible = false
 
@@ -81,7 +105,7 @@ func move_player(delta:float) -> void:
 	player.collision_mask = 8 if player.show_behind_parent else 4
 
 func check_spawn(delta:float) -> void:
-	if randf() < spawnrate*delta:
+	if randf() < (spawnrate*(0.6+game_speed))*delta:
 		spawn()
 
 func check_fire(delta:float) -> void:
@@ -104,7 +128,7 @@ func spawn() -> void:
 	e.target=player;
 	e.hp*=difficulty;
 	e.main = self
-	grid.add_child(e);
+	grid.call_deferred("add_child", e)
 	
 func fire() -> void:
 	var e:Shot = shot.instantiate();
@@ -113,12 +137,13 @@ func fire() -> void:
 	e.show_behind_parent = player.show_behind_parent;
 	e.scale=Vector2(0.002, 0.002);
 	e.target=null
-	e.speed*=projectile_speed+game_speed
-	grid.add_child(e);
+	e.speed*=projectile_speed
+	e.speed-=Vector2(0, game_speed)
+	grid.call_deferred("add_child", e)
 
-func spawn_point(pos: Vector2, behind_parent: bool, count: int, value: float=1):
+func spawn_point(pos: Vector2, behind_parent: bool, count: int, value: int):
 	for i: int in range(count*multiplier):
-		var offset=Vector2(randf()*0.005*count - 0.0025*count, randf()*0.005*count - 0.0025*count)
+		var offset=Vector2(randf()*0.05*count - 0.025*count, randf()*0.05*count - 0.025*count)
 		var p:PointScore = point.instantiate()
 		p.position = pos
 		p.position+=offset;
@@ -127,12 +152,28 @@ func spawn_point(pos: Vector2, behind_parent: bool, count: int, value: float=1):
 		p.speed*=game_speed
 		p.value*=value
 		p.collision_layer = 8 if behind_parent else 4
-		grid.add_child(p)
+		grid.call_deferred("add_child", p)
+	if green_multiplier > 0 && randf()<0.05:
+		spawn_green(pos, behind_parent, 1, value)
+
+func spawn_green(pos: Vector2, behind_parent: bool, count: int, value: float=1):
+	for i: int in range(count*green_multiplier):
+		var offset=Vector2(randf()*0.05*count - 0.025*count, randf()*0.05*count - 0.025*count)
+		var p:GreenScore = greenpoint.instantiate()
+		p.position = pos
+		p.position+=offset;
+		p.show_behind_parent = behind_parent
+		p.scale=Vector2(0.01, 0.01);
+		p.speed*=game_speed
+		p.value*=value
+		p.collision_layer = 8 if behind_parent else 4
+		grid.call_deferred("add_child", p)
 		
 
 func _physics_process(delta:float):
 	if running:
 		move_player(delta)
+		health=clampf(health+max_health*health_regen*delta, -1, max_health)
 
 func _process(delta: float) -> void:
 	if running:
@@ -151,7 +192,7 @@ func _on_player_area_entered(area: Area2D) -> void:
 	if running:
 		if area is Enemy: 
 			var e = area as Enemy
-			health-=e.hp
+			health-=e.hp*armor
 			updateHP()
 			e.queue_free();
 		elif area is PointScore:
@@ -160,10 +201,20 @@ func _on_player_area_entered(area: Area2D) -> void:
 			updatePoints()
 			checkUpgrades()
 			p.queue_free()
+		elif area is GreenScore:
+			var p = area as GreenScore
+			green_points += p.value
+			updateGreenPoints()
+			checkUpgrades()
+			p.queue_free()
 		
 func updateHP() -> void:
 	if health < 0:
-		stop()
+		if lifes <= 0:
+			stop()
+		else:
+			lifes-=1
+			health = max_health
 	maxhp.visible = true;
 	maxhp.size.x = clamp(130+max_health, 140, 440)
 	hptext.size.x = maxhp.size.x
@@ -174,6 +225,10 @@ func updatePoints() -> void:
 	basepointspanel.visible = true;
 	UpgradePanel.visible = true;
 	basepointstext.text = "%d" % [base_points]
+	
+func updateGreenPoints() -> void:
+	greenpointspanel.visible = true;
+	greenpointstext.text = "%d" % [green_points]
 
 func checkUpgrades() -> void:
 	for child in upgrades.get_children():
@@ -182,6 +237,7 @@ func checkUpgrades() -> void:
 func stop() -> void:
 	startButton.visible = true
 	startButton.grab_focus()
+	startButton.release_focus()
 	health = 0;
 	for child in upgrades.get_children():
 		child.run()
@@ -190,6 +246,7 @@ func stop() -> void:
 	checkUpgrades()
 
 func start() -> void:
+	apply_upgrades()
 	startButton.visible = false
 	health = max_health
 	running = true
@@ -200,10 +257,13 @@ func start() -> void:
 	for child in grid.get_children():
 		if child is Enemy:
 			child.queue_free()
+	updateAll()
 
 func updateAll()->void:
 	updateHP()
 	updatePoints()
+	if green_multiplier > 0:
+		updateGreenPoints()
 	checkUpgrades()
 	
 	
@@ -215,3 +275,30 @@ func _on_start_button_pressed() -> void:
 
 func _on_start_button_mouse_entered() -> void:
 	startButton.grab_focus()
+	
+func apply_upgrades()->void:
+	max_health = 10
+	speed = 0.1
+	spawnrate = 0.4
+	damage = 1
+	difficulty = 1
+	difficulty_scale = 0.02
+	fire_rate = 1
+	last_fire = 0
+	projectile_speed = 1
+	multiplier = 1
+	game_speed = 0.4
+	health_regen = 0
+	green_multiplier = 0
+	armor = 1
+	laser_count = 0
+	laser_reach = 1
+	multishot = 1
+	explosion_size = 0
+	boss_spawn_rate = 0
+	laserExplosion = 0
+	lifes=0;
+	vampiric = 0;
+	for child in upgrades.get_children():
+		child.apply()
+	

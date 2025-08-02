@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://tfh8t0tsv7rl"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_jvbkx"]
+[ext_resource type="Script" uid="uid://7ngs52iidsuu" path="res://shot_explosion.gd" id="2_jvbkx"]
+
+[node name="ShotExplosionUpgrade" instance=ExtResource("1_jvbkx")]
+script = ExtResource("2_jvbkx")
+bonus = 0.5
+base_point_cost = 25
+cost_scale = 10.0

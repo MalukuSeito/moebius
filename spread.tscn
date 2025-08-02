@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://du4uy3o2e7y2v"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_ro7sp"]
+[ext_resource type="Script" uid="uid://dtg8k8wlwajw7" path="res://spread.gd" id="2_ro7sp"]
+
+[node name="SpreadShotUpgrade" instance=ExtResource("1_ro7sp")]
+script = ExtResource("2_ro7sp")
+bonus = 1
+base_point_cost = 25
+cost_scale = 10.0

@@ -12,6 +12,7 @@ var target:Node2D = null;
 
 @export
 var hp:float = 1;
+var max_hp:float = 0;
 
 func _physics_process(delta:float):
 	position+=speed*delta;
@@ -31,11 +32,16 @@ func _physics_process(delta:float):
 	collision_mask = 0
 	
 func damage(d:float)->float:
-		hp-=d
-		if hp <= 0:
-			queue_free()
-			if main != null:
-				main.spawn_point(position, show_behind_parent, 1)
-			return -hp
-		else:
-			return 0
+	if max_hp <= 0:
+		max_hp = hp;
+	hp-=d
+	if hp <= 0:
+		queue_free()
+		if main != null:
+			var val:float = clampf((log(max_hp)/log(10)), 1, 100) 
+			main.spawn_point(position, show_behind_parent, 1, int(val))
+		return -hp
+	else:
+		var off = 0.5+0.5*hp/max_hp
+		modulate = Color(off, off, off)
+		return 0

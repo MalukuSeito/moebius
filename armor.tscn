@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d35qme32u1v2h"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_rklmr"]
+[ext_resource type="Script" uid="uid://cl84rw2urcn8m" path="res://armor.gd" id="2_rklmr"]
+
+[node name="ArmorUpgrade" instance=ExtResource("1_rklmr")]
+script = ExtResource("2_rklmr")
+bonus = 0.01
+base_point_cost = 25
+cost_scale = 10.0

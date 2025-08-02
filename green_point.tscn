@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdyc7or4npa20"]
+
+[ext_resource type="Script" uid="uid://cg0kapvyhne17" path="res://green_point.gd" id="1_1yt3t"]
+[ext_resource type="Texture2D" uid="uid://nc505fn43wem" path="res://Coin.png" id="2_yalr6"]
+
+[node name="GreenPoint" type="Area2D"]
+script = ExtResource("1_1yt3t")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("2_yalr6")
+texture_offset = Vector2(2, 2)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)

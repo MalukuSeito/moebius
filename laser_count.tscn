@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0a00u0of3fmm"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_h6wwg"]
+[ext_resource type="Script" uid="uid://ctwvklus11mr8" path="res://laser_count.gd" id="2_h6wwg"]
+
+[node name="LaserCountUpgrade" instance=ExtResource("1_h6wwg")]
+script = ExtResource("2_h6wwg")
+bonus = 1
+base_point_cost = 25
+cost_scale = 10.0

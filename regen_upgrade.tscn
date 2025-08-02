@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpdpnjhakdygn"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_0xrqj"]
+[ext_resource type="Script" uid="uid://o67fex8xlprw" path="res://regen_upgrade.gd" id="2_t7gjb"]
+
+[node name="RegenUpgrade" instance=ExtResource("1_0xrqj")]
+script = ExtResource("2_t7gjb")
+bonus = 1.01
+base_point_cost = 20
+cost_scale = 2.0

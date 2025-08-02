@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drd10kmhtkjo0"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_qjnp8"]
+[ext_resource type="Script" uid="uid://dvs4y4gksn62h" path="res://laser_reach.gd" id="2_qjnp8"]
+
+[node name="LaserReachUpgrade" instance=ExtResource("1_qjnp8")]
+script = ExtResource("2_qjnp8")
+bonus = 0.5
+base_point_cost = 25
+cost_scale = 10.0

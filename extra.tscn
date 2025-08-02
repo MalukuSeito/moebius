@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyob8wdtfvhtu"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_0q2bc"]
+[ext_resource type="Script" uid="uid://8hdq5fu6p0v8" path="res://extra.gd" id="2_0q2bc"]
+
+[node name="ExtraLifeUpgrade" instance=ExtResource("1_0q2bc")]
+script = ExtResource("2_0q2bc")
+bonus = 1
+base_point_cost = 25
+cost_scale = 10.0

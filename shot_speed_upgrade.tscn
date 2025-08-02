@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://blnbr16n5igr5"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_w4kpp"]
+[ext_resource type="Script" uid="uid://bhdgnllj80x6v" path="res://shot_speed_upgrade.gd" id="2_t2aka"]
+
+[node name="ShotSpeedUpgrade" instance=ExtResource("1_w4kpp")]
+script = ExtResource("2_t2aka")
+bonus = 1.1
+base_point_cost = 20
+cost_scale = 1.0

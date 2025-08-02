@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://r07e3j4g5214"]
+[gd_scene load_steps=79 format=3 uid="uid://r07e3j4g5214"]
 
 [ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cqhriew4g5l1d" path="res://main.gd" id="1_uu6xs"]
@@ -6,6 +6,70 @@
 [ext_resource type="Texture2D" uid="uid://c5oh5nd87fmc7" path="res://up.png" id="4_cm0pq"]
 [ext_resource type="Theme" uid="uid://bkv3j8h0u0um6" path="res://theme.tres" id="5_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://xmjsrie252h5" path="res://attack_upgrade.tscn" id="5_fos0i"]
+[ext_resource type="Texture2D" uid="uid://nc505fn43wem" path="res://Coin.png" id="5_mxvw5"]
+[ext_resource type="Texture2D" uid="uid://bpbkov4orgmni" path="res://Attack2.png" id="7_3b0ty"]
+[ext_resource type="PackedScene" uid="uid://1c48o2srfayq" path="res://health_upgrade.tscn" id="7_trn2v"]
+[ext_resource type="Texture2D" uid="uid://mwbiaquaa1xn" path="res://Health.png" id="8_03owx"]
+[ext_resource type="PackedScene" uid="uid://5ofsgyw6xqvc" path="res://rate_upgrade.tscn" id="9_03owx"]
+[ext_resource type="Texture2D" uid="uid://cj1qiflvtgn0t" path="res://Attack3.png" id="9_oye8v"]
+[ext_resource type="Texture2D" uid="uid://rhsbrg7twbym" path="res://Attack4.png" id="10_5mkgo"]
+[ext_resource type="Texture2D" uid="uid://dfkb3n37s6lir" path="res://Health2.png" id="10_hhcpw"]
+[ext_resource type="Texture2D" uid="uid://b4c860ssvyted" path="res://rate.png" id="10_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://dpdpnjhakdygn" path="res://regen_upgrade.tscn" id="11_5vvyt"]
+[ext_resource type="Texture2D" uid="uid://io4xcwhrqiu2" path="res://Attack5.png" id="11_v8qla"]
+[ext_resource type="Texture2D" uid="uid://drd1rk10y4fne" path="res://Regen.png" id="12_c6i3y"]
+[ext_resource type="Texture2D" uid="uid://boiwfde11j7jq" path="res://Attack6.png" id="12_y1tbi"]
+[ext_resource type="PackedScene" uid="uid://qiwuu3vpcfip" path="res://spawn_upgrade.tscn" id="13_c2ibq"]
+[ext_resource type="Texture2D" uid="uid://cr53afe3j30hf" path="res://Attack7.png" id="13_c2s76"]
+[ext_resource type="Texture2D" uid="uid://dueos5noeqfco" path="res://Attack8.png" id="14_f4ese"]
+[ext_resource type="Texture2D" uid="uid://cdd3nuyt3lixf" path="res://Spawn1.png" id="14_j4qnp"]
+[ext_resource type="PackedScene" uid="uid://dqqv18jbti31r" path="res://multiplier_upgrade.tscn" id="15_fpfj3"]
+[ext_resource type="Texture2D" uid="uid://d3fp3kbu2sc6l" path="res://rate2.png" id="16_3ccbu"]
+[ext_resource type="Texture2D" uid="uid://det0fy0msjsbp" path="res://Spawn2.png" id="16_bg4s2"]
+[ext_resource type="Texture2D" uid="uid://b0al83u1m2iyk" path="res://Spawn.png" id="16_mxvw5"]
+[ext_resource type="Texture2D" uid="uid://b11nsvegxxmrf" path="res://up2.png" id="16_sc1dx"]
+[ext_resource type="Texture2D" uid="uid://r4q1wqb5r4s0" path="res://rate3.png" id="17_3ccbu"]
+[ext_resource type="PackedScene" uid="uid://blnbr16n5igr5" path="res://shot_speed_upgrade.tscn" id="17_kjvhd"]
+[ext_resource type="Texture2D" uid="uid://8vaj2ovn0gef" path="res://ShotSpeed.png" id="18_5tuhn"]
+[ext_resource type="PackedScene" uid="uid://c4hib7e7urdgg" path="res://speed_upgrade.tscn" id="21_hhcpw"]
+[ext_resource type="Texture2D" uid="uid://ddmkxfam6j4gw" path="res://up3.png" id="22_5mvff"]
+[ext_resource type="Texture2D" uid="uid://u4p58vdn7xvv" path="res://Speed1.png" id="22_mxvw5"]
+[ext_resource type="Texture2D" uid="uid://dwcvdb8rr2ppu" path="res://up4.png" id="23_oye8v"]
+[ext_resource type="Texture2D" uid="uid://yt6nht64tmps" path="res://Regen2.png" id="24_38apo"]
+[ext_resource type="Texture2D" uid="uid://b4a47si4ga3dq" path="res://Regen3.png" id="25_a34eg"]
+[ext_resource type="Texture2D" uid="uid://chku2xonbpxv4" path="res://Regen4.png" id="26_via5u"]
+[ext_resource type="PackedScene" uid="uid://bcx0vkonsuy71" path="res://green_upgrade.tscn" id="28_40n85"]
+[ext_resource type="Texture2D" uid="uid://fhahxvgahoy6" path="res://Coin2.png" id="29_gb15f"]
+[ext_resource type="Texture2D" uid="uid://ds70umpp3mmuj" path="res://Coin3.png" id="30_sph85"]
+[ext_resource type="Texture2D" uid="uid://bwvl7ncbvrjol" path="res://Spawn3.png" id="31_ac6pf"]
+[ext_resource type="Texture2D" uid="uid://xtimllrasje8" path="res://Spawn4.png" id="32_ek63v"]
+[ext_resource type="PackedScene" uid="uid://d0a00u0of3fmm" path="res://laser_count.tscn" id="32_gb15f"]
+[ext_resource type="Texture2D" uid="uid://ucgjqt76tncr" path="res://Laser.png" id="33_sph85"]
+[ext_resource type="PackedScene" uid="uid://tfh8t0tsv7rl" path="res://shot_explosion.tscn" id="34_o7g6l"]
+[ext_resource type="Texture2D" uid="uid://vy6go5g2ryt5" path="res://ShotExplosive.png" id="35_vi5kq"]
+[ext_resource type="Texture2D" uid="uid://b8bhe1jkn5cm0" path="res://ShotSpeed2.png" id="39_gyych"]
+[ext_resource type="Texture2D" uid="uid://kvn08qn7m4x7" path="res://ShotSpeed3.png" id="40_xncey"]
+[ext_resource type="Texture2D" uid="uid://bej0wfewrhmuf" path="res://Laser2.png" id="41_rchyr"]
+[ext_resource type="Texture2D" uid="uid://cdgx30rw57lko" path="res://Laser3.png" id="42_pljue"]
+[ext_resource type="Texture2D" uid="uid://dpy2lposbgjq4" path="res://Speed2.png" id="43_skfvt"]
+[ext_resource type="Texture2D" uid="uid://bobq8lii7ljp8" path="res://Speed3.png" id="44_nn00d"]
+[ext_resource type="PackedScene" uid="uid://dwdn7dxwjn2ci" path="res://shot_laser.tscn" id="45_c2s76"]
+[ext_resource type="Texture2D" uid="uid://df6leo8gup5ed" path="res://Speed4.png" id="45_oy6xi"]
+[ext_resource type="Texture2D" uid="uid://ck700rk3ej66k" path="res://ShotLaser.png" id="46_f4ese"]
+[ext_resource type="PackedScene" uid="uid://drd10kmhtkjo0" path="res://laser_reach.tscn" id="47_pljue"]
+[ext_resource type="Texture2D" uid="uid://c3r5d8d3of4f1" path="res://LaserReach.png" id="48_nx4yo"]
+[ext_resource type="Texture2D" uid="uid://dtkeerybnm1o0" path="res://LaserReach2.png" id="49_5tfui"]
+[ext_resource type="PackedScene" uid="uid://bo5pcdla4sys5" path="res://boss_spawn.tscn" id="50_5tfui"]
+[ext_resource type="Texture2D" uid="uid://bct0366pvynsy" path="res://Boss.png" id="51_38apo"]
+[ext_resource type="PackedScene" uid="uid://du4uy3o2e7y2v" path="res://spread.tscn" id="62_a43ws"]
+[ext_resource type="Texture2D" uid="uid://dv7h4mfx10xsv" path="res://ShotTriple.png" id="63_aoymy"]
+[ext_resource type="PackedScene" uid="uid://d35qme32u1v2h" path="res://armor.tscn" id="64_ytdkf"]
+[ext_resource type="Texture2D" uid="uid://bqi3cooaqpk6h" path="res://Armor.png" id="65_0a21m"]
+[ext_resource type="Texture2D" uid="uid://c6bspn3ame0hv" path="res://Armor2.png" id="66_wnkxs"]
+[ext_resource type="PackedScene" uid="uid://2lf1h3jvq14m" path="res://vampire.tscn" id="67_8qby0"]
+[ext_resource type="Texture2D" uid="uid://dfb86wetmjypu" path="res://Vampire.png" id="68_lo0ny"]
+[ext_resource type="PackedScene" uid="uid://dyob8wdtfvhtu" path="res://extra.tscn" id="69_mitij"]
+[ext_resource type="Texture2D" uid="uid://bgswku7eob610" path="res://Extra.png" id="70_nmx32"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r0du0"]
 diffuse_texture = ExtResource("2_r0du0")
@@ -13,6 +77,30 @@ texture_repeat = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0du0"]
 radius = 0.0134371
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ny7u2"]
+atlas = ExtResource("10_wkp8b")
+region = Rect2(-4, 2, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ibq"]
+atlas = ExtResource("16_3ccbu")
+region = Rect2(-2, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4qnp"]
+atlas = ExtResource("12_c6i3y")
+region = Rect2(-4, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khphd"]
+atlas = ExtResource("24_38apo")
+region = Rect2(0, 3, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpfj3"]
+atlas = ExtResource("16_mxvw5")
+region = Rect2(-2, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrxkg"]
+atlas = ExtResource("14_j4qnp")
+region = Rect2(0, -2, 16, 16)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
@@ -61,6 +149,7 @@ offset_right = 440.0
 offset_bottom = 60.0
 
 [node name="Points" type="TextureRect" parent="PointsPanel"]
+self_modulate = Color(0, 0.743395, 0.743395, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.068
@@ -77,6 +166,28 @@ offset_bottom = 29.0
 text = "0"
 vertical_alignment = 1
 
+[node name="GreenPoints" type="Panel" parent="."]
+offset_top = 60.0
+offset_right = 440.0
+offset_bottom = 90.0
+
+[node name="Points" type="TextureRect" parent="GreenPoints"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.068
+anchor_bottom = 1.0
+offset_right = 0.079998
+pivot_offset = Vector2(15, 15)
+texture = ExtResource("5_mxvw5")
+
+[node name="PointsText" type="Label" parent="GreenPoints"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 439.0
+offset_bottom = 29.0
+text = "0"
+vertical_alignment = 1
+
 [node name="Upgrades" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -84,15 +195,1035 @@ offset_right = 40.0
 offset_bottom = 40.0
 theme = ExtResource("5_3dxm6")
 
-[node name="AttackUpgrade" parent="Upgrades" node_paths=PackedStringArray("main") instance=ExtResource("5_fos0i")]
+[node name="Attack1" parent="Upgrades" node_paths=PackedStringArray("main") instance=ExtResource("5_fos0i")]
 layout_mode = 0
-offset_left = 890.0
+offset_left = 900.0
 offset_top = 330.0
-offset_right = 930.0
+offset_right = 940.0
 offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Spawn1")
+focus_neighbor_top = NodePath("../Health1")
+focus_neighbor_right = NodePath("../Rate1")
+focus_neighbor_bottom = NodePath("../Laser1")
+focus_next = NodePath("../../StartButton")
 focus_previous = NodePath("../../StartButton")
 theme = null
-max = 1
+base_point_cost = 5
+base_id = "damage"
+max = 10
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 390.0
+offset_right = 1060.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Attack3")
+focus_neighbor_top = NodePath("../ShotSpeed1")
+focus_neighbor_right = NodePath("../LaserShot1")
+focus_neighbor_bottom = NodePath("../Rate3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("7_3b0ty")
+bonus = 2.0
+base_id = "damage2"
+max = 10
+dependsOn = NodePath("../ShotSpeed1")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 390.0
+offset_right = 1000.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Laser1")
+focus_neighbor_top = NodePath("../Rate1")
+focus_neighbor_right = NodePath("../Attack2")
+focus_neighbor_bottom = NodePath("../Explosion1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("9_oye8v")
+bonus = 4.0
+base_point_cost = 20
+base_id = "damage3"
+max = 10
+dependsOn = NodePath("../Attack2")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack4" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 450.0
+offset_right = 940.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Rate2")
+focus_neighbor_top = NodePath("../Laser1")
+focus_neighbor_right = NodePath("../Explosion1")
+focus_neighbor_bottom = NodePath("../Attack6")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("10_5mkgo")
+bonus = 8.0
+base_point_cost = 40
+base_id = "damage4"
+max = 10
+dependsOn = NodePath("../Explosion1")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack5" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 510.0
+offset_right = 880.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Reach1")
+focus_neighbor_top = NodePath("../Rate2")
+focus_neighbor_right = NodePath("../Attack6")
+focus_neighbor_bottom = NodePath("../Regen3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("11_v8qla")
+bonus = 16.0
+base_point_cost = 80
+base_id = "damage5"
+max = 10
+dependsOn = NodePath("../Rate2")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack6" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 510.0
+offset_right = 940.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Attack5")
+focus_neighbor_top = NodePath("../Attack4")
+focus_neighbor_right = NodePath("../Laser2")
+focus_neighbor_bottom = NodePath("../Regen4")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("12_y1tbi")
+bonus = 32.0
+base_point_cost = 160
+base_id = "damage6"
+max = 10
+dependsOn = NodePath("../Attack5")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack7" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 510.0
+offset_right = 1060.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Laser2")
+focus_neighbor_top = NodePath("../Rate3")
+focus_neighbor_right = NodePath("../Attack8")
+focus_neighbor_bottom = NodePath("../ShotSpeed3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("13_c2s76")
+bonus = 64.0
+base_point_cost = 320
+base_id = "damage7"
+max = 10
+dependsOn = NodePath("../Laser2")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Attack8" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 510.0
+offset_right = 1120.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Attack7")
+focus_neighbor_top = NodePath("../Laser3")
+focus_neighbor_right = NodePath("../Reach2")
+focus_neighbor_bottom = NodePath("../Speed4")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+theme = null
+icon = ExtResource("14_f4ese")
+bonus = 128.0
+base_point_cost = 640
+base_id = "damage8"
+max = 10
+dependsOn = NodePath("../Attack7")
+title = "Damage"
+main = NodePath("../..")
+
+[node name="Health1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("7_trn2v")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 270.0
+offset_right = 940.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Regen1")
+focus_neighbor_top = NodePath("../Extra1")
+focus_neighbor_right = NodePath("../Armor1")
+focus_neighbor_bottom = NodePath("../Attack1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("8_03owx")
+base_id = "health"
+max = 10
+dependsOn = NodePath("../Attack1")
+title = "Max Health"
+main = NodePath("../..")
+
+[node name="Health2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("7_trn2v")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 270.0
+offset_right = 820.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Spawn3")
+focus_neighbor_top = NodePath("../Regen2")
+focus_neighbor_right = NodePath("../Regen1")
+focus_neighbor_bottom = NodePath("../Blue1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("10_hhcpw")
+bonus = 50.0
+base_point_cost = 50
+base_id = "health2"
+max = 10
+dependsOn = NodePath("../Regen1")
+title = "Super Health"
+main = NodePath("../..")
+
+[node name="Health3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("7_trn2v")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 210.0
+offset_right = 880.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../Regen2")
+focus_neighbor_top = NodePath("../Regen3")
+focus_neighbor_right = NodePath("../Extra1")
+focus_neighbor_bottom = NodePath("../Regen1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("10_hhcpw")
+bonus = 100.0
+base_point_cost = 250
+base_id = "health3"
+dependsOn = NodePath("../Regen2")
+title = "Super Health"
+main = NodePath("../..")
+
+[node name="Rate1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("9_03owx")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 330.0
+offset_right = 1000.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Attack1")
+focus_neighbor_top = NodePath("../Armor1")
+focus_neighbor_right = NodePath("../ShotSpeed1")
+focus_neighbor_bottom = NodePath("../Attack3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_ny7u2")
+base_point_cost = 10
+cost_scale = 1.0
+base_id = "rate"
+max = 10
+dependsOn = NodePath("../Attack1")
+title = "Fire Rate"
+main = NodePath("../..")
+
+[node name="Rate2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("9_03owx")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 450.0
+offset_right = 880.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Green2")
+focus_neighbor_top = NodePath("../Green1")
+focus_neighbor_right = NodePath("../Attack4")
+focus_neighbor_bottom = NodePath("../Attack5")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_c2ibq")
+bonus = 1.1
+base_point_cost = 50
+cost_scale = 1.0
+base_id = "rate3"
+max = 10
+dependsOn = NodePath("../Attack4")
+title = "Fire Rate"
+main = NodePath("../..")
+
+[node name="Rate3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("9_03owx")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 450.0
+offset_right = 1060.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Explosion1")
+focus_neighbor_top = NodePath("../Attack2")
+focus_neighbor_right = NodePath("../Laser3")
+focus_neighbor_bottom = NodePath("../Attack7")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("17_3ccbu")
+bonus = 1.2
+base_point_cost = 250
+cost_scale = 1.0
+base_id = "rate2"
+max = 10
+dependsOn = NodePath("../Attack7")
+title = "Fire Rate"
+main = NodePath("../..")
+
+[node name="Regen1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("11_5vvyt")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 270.0
+offset_right = 880.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Health2")
+focus_neighbor_top = NodePath("../Health3")
+focus_neighbor_right = NodePath("../Health1")
+focus_neighbor_bottom = NodePath("../Spawn1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_j4qnp")
+base_point_cost = 50
+base_id = "regen"
+max = 10
+dependsOn = NodePath("../Health1")
+title = "Health Regen"
+main = NodePath("../..")
+
+[node name="Regen2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("11_5vvyt")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 210.0
+offset_right = 820.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../BossSpawn")
+focus_neighbor_top = NodePath("../Spawn5")
+focus_neighbor_right = NodePath("../Health3")
+focus_neighbor_bottom = NodePath("../Health2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_khphd")
+bonus = 1.02
+base_point_cost = 250
+base_id = "regen2"
+max = 10
+dependsOn = NodePath("../Health2")
+dependsOn2 = NodePath("../BossSpawn")
+title = "Health Regen"
+main = NodePath("../..")
+
+[node name="Regen3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("11_5vvyt")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 150.0
+offset_right = 880.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Spawn5")
+focus_neighbor_top = NodePath("../Attack5")
+focus_neighbor_right = NodePath("../Regen4")
+focus_neighbor_bottom = NodePath("../Health3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("25_a34eg")
+bonus = 1.03
+base_point_cost = 750
+base_id = "regen3"
+max = 10
+dependsOn = NodePath("../Health3")
+title = "Health Regen"
+main = NodePath("../..")
+
+[node name="Regen4" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("11_5vvyt")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 150.0
+offset_right = 940.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Regen3")
+focus_neighbor_top = NodePath("../Attack6")
+focus_neighbor_right = NodePath("../Vampire1")
+focus_neighbor_bottom = NodePath("../Extra1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("26_via5u")
+bonus = 1.03
+base_point_cost = 750
+base_id = "regen4"
+max = 10
+dependsOn = NodePath("../Regen3")
+title = "Health Regen"
+main = NodePath("../..")
+
+[node name="Spawn1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("13_c2ibq")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 330.0
+offset_right = 880.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Blue1")
+focus_neighbor_top = NodePath("../Regen1")
+focus_neighbor_right = NodePath("../Attack1")
+focus_neighbor_bottom = NodePath("../Green1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_fpfj3")
+base_point_cost = 10
+base_id = "spawn"
+max = 10
+dependsOn = NodePath("../Attack1")
+title = "Enemy Spawn"
+main = NodePath("../..")
+
+[node name="Spawn2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("13_c2ibq")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 330.0
+offset_right = 760.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Speed1")
+focus_neighbor_top = NodePath("../Spawn3")
+focus_neighbor_right = NodePath("../Blue1")
+focus_neighbor_bottom = NodePath("../Blue3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = SubResource("AtlasTexture_xrxkg")
+bonus = 1.2
+base_point_cost = 40
+cost_scale = 2.0
+base_id = "spawn2"
+max = 5
+dependsOn = NodePath("../Blue1")
+title = "Enemy Swarm"
+main = NodePath("../..")
+
+[node name="Spawn3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("13_c2ibq")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 270.0
+offset_right = 760.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Speed2")
+focus_neighbor_top = NodePath("../BossSpawn")
+focus_neighbor_right = NodePath("../Health2")
+focus_neighbor_bottom = NodePath("../Spawn2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("16_bg4s2")
+bonus = 1.3
+base_point_cost = 100
+cost_scale = 2.0
+base_id = "spawn2"
+max = 5
+dependsOn = NodePath("../Spawn2")
+dependsOn2 = NodePath("../Health2")
+title = "Super Spawn"
+main = NodePath("../..")
+
+[node name="Spawn4" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("13_c2ibq")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 150.0
+offset_right = 760.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Speed4")
+focus_neighbor_top = NodePath("../Reach2")
+focus_neighbor_right = NodePath("../Spawn5")
+focus_neighbor_bottom = NodePath("../BossSpawn")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("31_ac6pf")
+bonus = 1.4
+base_point_cost = 100
+cost_scale = 2.0
+base_id = "spawn2"
+max = 5
+dependsOn = NodePath("../BossSpawn")
+title = "Super Spawn"
+main = NodePath("../..")
+
+[node name="Spawn5" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("13_c2ibq")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 150.0
+offset_right = 820.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Spawn4")
+focus_neighbor_top = NodePath("../Reach1")
+focus_neighbor_right = NodePath("../Regen3")
+focus_neighbor_bottom = NodePath("../Regen2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("32_ek63v")
+bonus = 1.5
+base_point_cost = 100
+cost_scale = 2.0
+base_id = "spawn2"
+dependsOn = NodePath("../Spawn4")
+dependsOn2 = NodePath("../Regen2")
+title = "Super Spawn"
+main = NodePath("../..")
+
+[node name="Blue1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("15_fpfj3")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 330.0
+offset_right = 820.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Spawn2")
+focus_neighbor_top = NodePath("../Health2")
+focus_neighbor_right = NodePath("../Spawn1")
+focus_neighbor_bottom = NodePath("../Blue2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("16_sc1dx")
+cost_scale = 1.0
+base_id = "blue1"
+max = 3
+dependsOn = NodePath("../Spawn1")
+title = "Salvage"
+main = NodePath("../..")
+
+[node name="Blue2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("15_fpfj3")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 390.0
+offset_right = 820.0
+offset_bottom = 430.0
+focus_neighbor_top = NodePath("../Blue1")
+focus_neighbor_right = NodePath("../Green1")
+focus_neighbor_bottom = NodePath("../Green2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("22_5mvff")
+bonus = 5
+base_point_cost = 250
+cost_scale = 1.0
+base_id = "blue2"
+max = 4
+dependsOn = NodePath("../Blue1")
+dependsOn2 = NodePath("../Green1")
+title = "Salvage Bots"
+main = NodePath("../..")
+
+[node name="Blue3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("15_fpfj3")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 390.0
+offset_right = 760.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../LaserShot1")
+focus_neighbor_top = NodePath("../Spawn2")
+focus_neighbor_right = NodePath("../Blue2")
+focus_neighbor_bottom = NodePath("../Green3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("23_oye8v")
+bonus = 20
+base_point_cost = 2500
+cost_scale = 1.0
+base_id = "blue3"
+dependsOn = NodePath("../Spawn2")
+dependsOn2 = NodePath("../Blue2")
+title = "Special Prices"
+main = NodePath("../..")
+
+[node name="ShotSpeed1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("17_kjvhd")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 330.0
+offset_right = 1060.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../Rate1")
+focus_neighbor_top = NodePath("../Spread1")
+focus_neighbor_right = NodePath("../Speed1")
+focus_neighbor_bottom = NodePath("../Attack2")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+icon = ExtResource("18_5tuhn")
+base_point_cost = 10
+cost_scale = 0.5
+base_id = "fast"
+max = 10
+dependsOn = NodePath("../Rate1")
+title = "Linear Accelerator"
+main = NodePath("../..")
+
+[node name="ShotSpeed2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("17_kjvhd")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 210.0
+offset_right = 1060.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../Armor2")
+focus_neighbor_top = NodePath("../ShotSpeed3")
+focus_neighbor_right = NodePath("../Speed3")
+focus_neighbor_bottom = NodePath("../Spread1")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+icon = ExtResource("39_gyych")
+bonus = 1.2
+base_point_cost = 100
+cost_scale = 0.5
+base_id = "fast"
+max = 10
+dependsOn = NodePath("../Spread1")
+title = "Coil Accelerator"
+main = NodePath("../..")
+
+[node name="ShotSpeed3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("17_kjvhd")]
+layout_mode = 0
+offset_left = 1020.0
+offset_top = 150.0
+offset_right = 1060.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Vampire1")
+focus_neighbor_top = NodePath("../Attack7")
+focus_neighbor_right = NodePath("../Speed4")
+focus_neighbor_bottom = NodePath("../ShotSpeed2")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+icon = ExtResource("40_xncey")
+bonus = 1.3
+base_point_cost = 500
+cost_scale = 0.5
+base_id = "fast3"
+max = 10
+dependsOn = NodePath("../ShotSpeed2")
+title = "Railgun"
+main = NodePath("../..")
+
+[node name="Speed1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("21_hhcpw")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 330.0
+offset_right = 1120.0
+offset_bottom = 370.0
+focus_neighbor_left = NodePath("../ShotSpeed1")
+focus_neighbor_top = NodePath("../Speed2")
+focus_neighbor_right = NodePath("../Spawn2")
+focus_neighbor_bottom = NodePath("../LaserShot1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("22_mxvw5")
+base_point_cost = 30
+base_id = "speed"
+max = 5
+dependsOn = NodePath("../ShotSpeed1")
+title = "Maneuvering Thrusters"
+main = NodePath("../..")
+
+[node name="Speed2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("21_hhcpw")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 270.0
+offset_right = 1120.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Spread1")
+focus_neighbor_top = NodePath("../Speed3")
+focus_neighbor_right = NodePath("../Spawn3")
+focus_neighbor_bottom = NodePath("../Speed1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("43_skfvt")
+bonus = 1.2
+base_point_cost = 120
+base_id = "speed2"
+max = 5
+dependsOn = NodePath("../Speed1")
+title = "Omnidirectional Thrusters"
+main = NodePath("../..")
+
+[node name="Speed3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("21_hhcpw")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 210.0
+offset_right = 1120.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../ShotSpeed2")
+focus_neighbor_top = NodePath("../Speed4")
+focus_neighbor_right = NodePath("../BossSpawn")
+focus_neighbor_bottom = NodePath("../Speed2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("44_nn00d")
+bonus = 1.3
+base_point_cost = 300
+base_id = "speed3"
+max = 5
+dependsOn = NodePath("../Speed2")
+dependsOn2 = NodePath("../ShotSpeed2")
+title = "Reverser Thrusters"
+main = NodePath("../..")
+
+[node name="Speed4" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("21_hhcpw")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 150.0
+offset_right = 1120.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../ShotSpeed3")
+focus_neighbor_top = NodePath("../Attack8")
+focus_neighbor_right = NodePath("../Spawn4")
+focus_neighbor_bottom = NodePath("../Speed3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("45_oy6xi")
+bonus = 1.4
+base_point_cost = 900
+base_id = "speed4"
+max = 5
+dependsOn = NodePath("../Speed3")
+dependsOn2 = NodePath("../ShotSpeed3")
+title = "Thrust Vectoring"
+main = NodePath("../..")
+
+[node name="Green1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("28_40n85")]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 390.0
+offset_right = 880.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Blue2")
+focus_neighbor_top = NodePath("../Spawn1")
+focus_neighbor_right = NodePath("../Laser1")
+focus_neighbor_bottom = NodePath("../Rate2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("5_mxvw5")
+base_point_cost = 100
+base_id = "green"
+max = 3
+dependsOn = NodePath("../Spawn1")
+title = "Salvage Coins"
+main = NodePath("../..")
+
+[node name="Green2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("28_40n85")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 450.0
+offset_right = 820.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Green3")
+focus_neighbor_top = NodePath("../Blue2")
+focus_neighbor_right = NodePath("../Rate2")
+focus_neighbor_bottom = NodePath("../Reach1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("29_gb15f")
+bonus = 5
+base_point_cost = 1000
+base_id = "green2"
+max = 5
+dependsOn = NodePath("../Blue2")
+title = "Coin Collector"
+main = NodePath("../..")
+
+[node name="Green3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("28_40n85")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 450.0
+offset_right = 760.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Laser3")
+focus_neighbor_top = NodePath("../Blue3")
+focus_neighbor_right = NodePath("../Green2")
+focus_neighbor_bottom = NodePath("../Reach2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("30_sph85")
+bonus = 20
+base_point_cost = 10000
+base_id = "green3"
+dependsOn = NodePath("../Blue3")
+dependsOn2 = NodePath("../Green2")
+title = "Coin Maniac"
+main = NodePath("../..")
+
+[node name="Laser1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("32_gb15f")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 390.0
+offset_right = 940.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Green1")
+focus_neighbor_top = NodePath("../Attack1")
+focus_neighbor_right = NodePath("../Attack3")
+focus_neighbor_bottom = NodePath("../Attack4")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("33_sph85")
+base_point_cost = 5
+base_id = "laser"
+max = 2
+dependsOn = NodePath("../Green1")
+dependsOn2 = NodePath("../Attack3")
+title = "Laser"
+main = NodePath("../..")
+
+[node name="Laser2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("32_gb15f")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 510.0
+offset_right = 1000.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Attack6")
+focus_neighbor_top = NodePath("../Explosion1")
+focus_neighbor_right = NodePath("../Attack7")
+focus_neighbor_bottom = NodePath("../Vampire1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("41_rchyr")
+bonus = 2
+base_id = "laser"
+max = 3
+dependsOn = NodePath("../Attack6")
+title = "Extra Laser"
+main = NodePath("../..")
+
+[node name="Laser3" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("32_gb15f")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 450.0
+offset_right = 1120.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Rate3")
+focus_neighbor_top = NodePath("../LaserShot1")
+focus_neighbor_right = NodePath("../Green3")
+focus_neighbor_bottom = NodePath("../Attack8")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("42_pljue")
+bonus = 4
+base_point_cost = 125
+base_id = "laser"
+max = 5
+dependsOn = NodePath("../Rate3")
+dependsOn2 = NodePath("../Attack8")
+title = "Extra Laser"
+main = NodePath("../..")
+
+[node name="Explosion1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("34_o7g6l")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 450.0
+offset_right = 1000.0
+offset_bottom = 490.0
+focus_neighbor_left = NodePath("../Attack4")
+focus_neighbor_top = NodePath("../Attack3")
+focus_neighbor_right = NodePath("../Rate3")
+focus_neighbor_bottom = NodePath("../Laser2")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("35_vi5kq")
+base_point_cost = 100
+cost_scale = 2.0
+base_id = "explosion"
+max = 10
+dependsOn = NodePath("../Laser1")
+title = "Explosive Shot"
+main = NodePath("../..")
+
+[node name="LaserShot1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("45_c2s76")]
+layout_mode = 0
+offset_left = 1080.0
+offset_top = 390.0
+offset_right = 1120.0
+offset_bottom = 430.0
+focus_neighbor_left = NodePath("../Attack2")
+focus_neighbor_top = NodePath("../Speed1")
+focus_neighbor_right = NodePath("../Blue3")
+focus_neighbor_bottom = NodePath("../Laser3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("46_f4ese")
+base_point_cost = 100
+cost_scale = 0.5
+dependsOn = NodePath("../Laser3")
+dependsOn2 = NodePath("../Speed1")
+title = "Laser Explosion"
+main = NodePath("../..")
+
+[node name="Reach1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("47_pljue")]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 510.0
+offset_right = 820.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Reach2")
+focus_neighbor_top = NodePath("../Green2")
+focus_neighbor_right = NodePath("../Attack5")
+focus_neighbor_bottom = NodePath("../Spawn5")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("48_nx4yo")
+bonus = 0.1
+base_point_cost = 50
+cost_scale = 1.0
+base_id = "reach1"
+max = 5
+dependsOn = NodePath("../Attack5")
+title = "Laser Reach"
+main = NodePath("../..")
+
+[node name="Reach2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("47_pljue")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 510.0
+offset_right = 760.0
+offset_bottom = 550.0
+focus_neighbor_left = NodePath("../Attack8")
+focus_neighbor_top = NodePath("../Green3")
+focus_neighbor_right = NodePath("../Reach1")
+focus_neighbor_bottom = NodePath("../Spawn4")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("49_5tfui")
+base_point_cost = 250
+cost_scale = 1.0
+base_id = "reach2"
+max = 10
+dependsOn = NodePath("../Reach1")
+title = "Excessive Reach"
+main = NodePath("../..")
+
+[node name="BossSpawn" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("50_5tfui")]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 210.0
+offset_right = 760.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../Speed3")
+focus_neighbor_top = NodePath("../Spawn4")
+focus_neighbor_right = NodePath("../Regen2")
+focus_neighbor_bottom = NodePath("../Spawn3")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("51_38apo")
+base_id = "boss"
+dependsOn = NodePath("../Spawn3")
+title = "Boss Encounters"
+main = NodePath("../..")
+
+[node name="Spread1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("62_a43ws")]
+offset_left = 1020.0
+offset_top = 270.0
+offset_right = 1060.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Armor1")
+focus_neighbor_top = NodePath("../ShotSpeed2")
+focus_neighbor_right = NodePath("../Speed2")
+focus_neighbor_bottom = NodePath("../ShotSpeed1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("63_aoymy")
+base_point_cost = 200
+base_id = "spread"
+dependsOn = NodePath("../ShotSpeed1")
+title = "Spread Shot"
+main = NodePath("../..")
+
+[node name="Armor1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("64_ytdkf")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 270.0
+offset_right = 1000.0
+offset_bottom = 310.0
+focus_neighbor_left = NodePath("../Health1")
+focus_neighbor_top = NodePath("../Armor2")
+focus_neighbor_right = NodePath("../Spread1")
+focus_neighbor_bottom = NodePath("../Rate1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("65_0a21m")
+base_point_cost = 20
+max = 10
+dependsOn = NodePath("../Spread1")
+dependsOn2 = NodePath("../Health1")
+title = "Laser Armor"
+main = NodePath("../..")
+
+[node name="Armor2" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "main") instance=ExtResource("64_ytdkf")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 210.0
+offset_right = 1000.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../Extra1")
+focus_neighbor_top = NodePath("../Vampire1")
+focus_neighbor_right = NodePath("../ShotSpeed2")
+focus_neighbor_bottom = NodePath("../Armor1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("66_wnkxs")
+bonus = 0.03
+base_point_cost = 200
+max = 10
+dependsOn = NodePath("../Armor1")
+title = "Laser Shields"
+main = NodePath("../..")
+
+[node name="Vampire1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "dependsOn3", "main") instance=ExtResource("67_8qby0")]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 150.0
+offset_right = 1000.0
+offset_bottom = 190.0
+focus_neighbor_left = NodePath("../Regen4")
+focus_neighbor_top = NodePath("../Laser2")
+focus_neighbor_right = NodePath("../ShotSpeed3")
+focus_neighbor_bottom = NodePath("../Armor2")
+icon = ExtResource("68_lo0ny")
+base_point_cost = 400
+cost_scale = 2.0
+base_id = "vampire"
+dependsOn = NodePath("../ShotSpeed3")
+dependsOn2 = NodePath("../Regen4")
+dependsOn3 = NodePath("../Armor2")
+title = "Vampiric"
+main = NodePath("../..")
+
+[node name="Extra1" parent="Upgrades" node_paths=PackedStringArray("dependsOn", "dependsOn2", "main") instance=ExtResource("69_mitij")]
+layout_mode = 0
+offset_left = 900.0
+offset_top = 210.0
+offset_right = 940.0
+offset_bottom = 250.0
+focus_neighbor_left = NodePath("../Health3")
+focus_neighbor_top = NodePath("../Regen4")
+focus_neighbor_right = NodePath("../Armor2")
+focus_neighbor_bottom = NodePath("../Health1")
+focus_next = NodePath("../../StartButton")
+focus_previous = NodePath("../../StartButton")
+icon = ExtResource("70_nmx32")
+base_point_cost = 500
+cost_scale = 4.0
+base_id = "life"
+max = 5
+dependsOn = NodePath("../Regen4")
+dependsOn2 = NodePath("../Armor2")
+title = "Extra Life"
 main = NodePath("../..")
 
 [node name="StartButton" type="Button" parent="."]
@@ -100,21 +1231,21 @@ offset_left = 462.0
 offset_top = 287.0
 offset_right = 690.0
 offset_bottom = 388.0
-focus_neighbor_right = NodePath("../Upgrades/AttackUpgrade")
-focus_next = NodePath("../Upgrades/AttackUpgrade")
+focus_neighbor_right = NodePath("../Upgrades/Attack1")
+focus_next = NodePath("../Upgrades/Attack1")
 text = "LOOP!"
 
 [node name="Panel" type="Panel" parent="."]
 offset_left = 714.0
 offset_top = 2.0
 offset_right = 1150.0
-offset_bottom = 62.0
+offset_bottom = 92.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 437.0
-offset_bottom = 60.0
+offset_bottom = 91.0
 horizontal_alignment = 1
 clip_text = true
 text_overrun_behavior = 3

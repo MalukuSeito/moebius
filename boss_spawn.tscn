@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo5pcdla4sys5"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_mjmth"]
+[ext_resource type="Script" uid="uid://po4f1t0jeuss" path="res://boss_spawn.gd" id="2_reh62"]
+
+[node name="BossSpawnUpgrade" instance=ExtResource("1_mjmth")]
+script = ExtResource("2_reh62")
+bonus = 0.01
+base_point_cost = 1
+cost_scale = 10.0

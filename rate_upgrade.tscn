@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ofsgyw6xqvc"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_f62g7"]
+[ext_resource type="Script" uid="uid://bh6b6jp1a2t5m" path="res://rate_upgrade.gd" id="2_spfps"]
+
+[node name="RateUpgrade" instance=ExtResource("1_f62g7")]
+script = ExtResource("2_spfps")
+bonus = 1.05
+base_point_cost = 20
+cost_scale = 2.0
