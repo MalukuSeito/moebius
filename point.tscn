@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjypw41xu8thx"]
+
+[ext_resource type="Script" uid="uid://bmteac2cebv2m" path="res://point.gd" id="1_q733i"]
+[ext_resource type="Texture2D" uid="uid://c5oh5nd87fmc7" path="res://up.png" id="2_q733i"]
+
+[node name="Point" type="Area2D"]
+script = ExtResource("1_q733i")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+self_modulate = Color(0.188235, 0.764706, 1, 1)
+texture = ExtResource("2_q733i")
+texture_offset = Vector2(1, 1)
+texture_scale = Vector2(4, 4)
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-1, -1, -1, 1, 1, 1, 1, -1)

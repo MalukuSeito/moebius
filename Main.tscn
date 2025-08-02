@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://r07e3j4g5214"]
+[gd_scene load_steps=7 format=3 uid="uid://r07e3j4g5214"]
 
 [ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cqhriew4g5l1d" path="res://main.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cwom7w0woy2f3" path="res://Grid.png" id="2_r0du0"]
+[ext_resource type="Texture2D" uid="uid://c5oh5nd87fmc7" path="res://up.png" id="4_cm0pq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r0du0"]
 diffuse_texture = ExtResource("2_r0du0")
@@ -32,5 +33,45 @@ polygon = PackedVector2Array(-0.00666654, 0, -0.00666666, 0.0233334, 0, 0.02, 0.
 [node name="CollisionShape2D" type="CollisionShape2D" parent="The Grid/Player"]
 position = Vector2(0, 0.02)
 shape = SubResource("CircleShape2D_r0du0")
+
+[node name="HPPanel" type="Panel" parent="."]
+clip_contents = true
+offset_right = 440.0
+offset_bottom = 30.0
+
+[node name="HP" type="ColorRect" parent="HPPanel"]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 30.0
+color = Color(1, 0, 0, 1)
+
+[node name="HPText" type="Label" parent="HPPanel"]
+layout_mode = 0
+offset_right = 439.0
+offset_bottom = 29.0
+text = "10/10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PointsPanel" type="Panel" parent="."]
+offset_top = 30.0
+offset_right = 440.0
+offset_bottom = 60.0
+
+[node name="Points" type="TextureRect" parent="PointsPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.068
+anchor_bottom = 1.0
+offset_right = 0.079998
+pivot_offset = Vector2(15, 15)
+texture = ExtResource("4_cm0pq")
+
+[node name="PointsText" type="Label" parent="PointsPanel"]
+offset_left = 34.0
+offset_right = 439.0
+offset_bottom = 29.0
+text = "0"
+vertical_alignment = 1
 
 [connection signal="area_entered" from="The Grid/Player" to="." method="_on_player_area_entered"]

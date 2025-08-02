@@ -1,14 +1,13 @@
-class_name Shot
+class_name PointScore
 extends Area2D
 
 @export
-var speed: Vector2 = Vector2(0, -0.5);
+var speed: Vector2 = Vector2(0, 0.2);
 
 @export
-var target:Node2D = null;
+var value:float = 1;
 
-@export
-var damage:float = 2;
+var rot_speed:float = randf()-0.5
 
 var swapped = false;
 
@@ -33,11 +32,6 @@ func _physics_process(delta:float):
 		else:
 			swapped = true
 			show_behind_parent = !show_behind_parent
-	collision_layer = 0
-	collision_mask = 8 if show_behind_parent else 4
-
-func _on_area_entered(area: Area2D) -> void:
-	if area is Enemy: 
-		var e = area as Enemy
-		e.damage(damage)
-		queue_free();
+	collision_layer = 8 if show_behind_parent else 4
+	collision_mask = 0
+	rotation+=rot_speed*delta
