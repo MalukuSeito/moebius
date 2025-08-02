@@ -30,8 +30,8 @@ func _physics_process(delta:float):
 	collision_layer = 8 if show_behind_parent else 4
 	collision_mask = 0
 	
-func damage(damage:float)->float:
-		hp-=damage
+func damage(d:float)->float:
+		hp-=d
 		if hp <= 0:
 			queue_free()
 			if main != null:

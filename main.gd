@@ -1,6 +1,8 @@
 class_name Main
 extends Node2D
 
+
+
 var speed:float = 0.1
 var spawnrate: float = 0.4
 var damage:float = 1
@@ -14,7 +16,7 @@ var game_speed: float = 0.4
 
 var health:float = 10;
 var max_health:float = 10;
-var base_points: float = 0;
+var base_points: float = 9;
 
 @onready
 var player = $"The Grid/Player"
@@ -44,10 +46,26 @@ var basepointstext = $PointsPanel/PointsText
 var basepointspanel = $PointsPanel
 @onready
 var basepoints = $PointsPanel/Points
+@onready
+var upgrades = $Upgrades
+
+@onready
+var startButton = $StartButton
+
+@onready
+var UpgradeLabel = $Panel/Label
+
+@onready
+var UpgradePanel = $Panel
+
+
+var running = true;
 
 func _ready() -> void:
 	maxhp.visible = false
 	basepointspanel.visible = false
+	UpgradePanel.visible = false
+	startButton.visible = false
 
 func move_player(delta:float) -> void:
 	player.position.y -= game_speed*delta;
@@ -61,7 +79,6 @@ func move_player(delta:float) -> void:
 		player.position.x = 1.17
 	player.collision_layer = 2 if player.show_behind_parent else 1
 	player.collision_mask = 8 if player.show_behind_parent else 4
-	pass;
 
 func check_spawn(delta:float) -> void:
 	if randf() < spawnrate*delta:
@@ -99,11 +116,11 @@ func fire() -> void:
 	e.speed*=projectile_speed+game_speed
 	grid.add_child(e);
 
-func spawn_point(position: Vector2, behind_parent: bool, count: int, value: float=1):
+func spawn_point(pos: Vector2, behind_parent: bool, count: int, value: float=1):
 	for i: int in range(count*multiplier):
 		var offset=Vector2(randf()*0.005*count - 0.0025*count, randf()*0.005*count - 0.0025*count)
 		var p:PointScore = point.instantiate()
-		p.position = position
+		p.position = pos
 		p.position+=offset;
 		p.show_behind_parent = behind_parent
 		p.scale=Vector2(0.01, 0.01);
@@ -114,28 +131,39 @@ func spawn_point(position: Vector2, behind_parent: bool, count: int, value: floa
 		
 
 func _physics_process(delta:float):
-	move_player(delta)
+	if running:
+		move_player(delta)
 
 func _process(delta: float) -> void:
-	game_speed *= 1+0.01*delta;
-	difficulty+=difficulty_scale*delta;
-	basepoints.rotation += 0.4*delta
-	check_spawn(delta)
-	check_fire(delta)
+	if running:
+		if (Input.is_action_pressed("ui_cancel")):
+			stop();
+		game_speed *= 1+0.01*delta;
+		difficulty+=difficulty_scale*delta;
+		basepoints.rotation += 0.4*delta
+		check_spawn(delta)
+		check_fire(delta)
+	else:
+		if (Input.is_action_pressed("ui_cancel")):
+			startButton.grab_focus()
 
 func _on_player_area_entered(area: Area2D) -> void:
-	if area is Enemy: 
-		var e = area as Enemy
-		health-=e.hp
-		updateHP()
-		e.queue_free();
-	elif area is PointScore:
-		var p = area as PointScore
-		base_points += p.value
-		updatePoints()
-		p.queue_free()
+	if running:
+		if area is Enemy: 
+			var e = area as Enemy
+			health-=e.hp
+			updateHP()
+			e.queue_free();
+		elif area is PointScore:
+			var p = area as PointScore
+			base_points += p.value
+			updatePoints()
+			checkUpgrades()
+			p.queue_free()
 		
 func updateHP() -> void:
+	if health < 0:
+		stop()
 	maxhp.visible = true;
 	maxhp.size.x = clamp(130+max_health, 140, 440)
 	hptext.size.x = maxhp.size.x
@@ -144,4 +172,46 @@ func updateHP() -> void:
 	
 func updatePoints() -> void:
 	basepointspanel.visible = true;
+	UpgradePanel.visible = true;
 	basepointstext.text = "%d" % [base_points]
+
+func checkUpgrades() -> void:
+	for child in upgrades.get_children():
+		child.check()
+		
+func stop() -> void:
+	startButton.visible = true
+	startButton.grab_focus()
+	health = 0;
+	for child in upgrades.get_children():
+		child.run()
+	player.visible = false
+	running = false;
+	checkUpgrades()
+
+func start() -> void:
+	startButton.visible = false
+	health = max_health
+	running = true
+	player.visible = true
+	player.position = Vector2(0.96, 1.04)
+	for child in upgrades.get_children():
+		child.stop()
+	for child in grid.get_children():
+		if child is Enemy:
+			child.queue_free()
+
+func updateAll()->void:
+	updateHP()
+	updatePoints()
+	checkUpgrades()
+	
+	
+func displayUpgradeText(t: String)->void:
+	UpgradeLabel.text = t;
+
+func _on_start_button_pressed() -> void:
+	start()
+
+func _on_start_button_mouse_entered() -> void:
+	startButton.grab_focus()

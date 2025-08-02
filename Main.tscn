@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://r07e3j4g5214"]
+[gd_scene load_steps=9 format=3 uid="uid://r07e3j4g5214"]
 
 [ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cqhriew4g5l1d" path="res://main.gd" id="1_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://cwom7w0woy2f3" path="res://Grid.png" id="2_r0du0"]
 [ext_resource type="Texture2D" uid="uid://c5oh5nd87fmc7" path="res://up.png" id="4_cm0pq"]
+[ext_resource type="Theme" uid="uid://bkv3j8h0u0um6" path="res://theme.tres" id="5_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://xmjsrie252h5" path="res://attack_upgrade.tscn" id="5_fos0i"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r0du0"]
 diffuse_texture = ExtResource("2_r0du0")
@@ -12,7 +14,7 @@ texture_repeat = 3
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0du0"]
 radius = 0.0134371
 
-[node name="Node2D" type="Node2D"]
+[node name="Main" type="Node2D"]
 script = ExtResource("1_uu6xs")
 
 [node name="The Grid" type="Polygon2D" parent="."]
@@ -68,10 +70,55 @@ pivot_offset = Vector2(15, 15)
 texture = ExtResource("4_cm0pq")
 
 [node name="PointsText" type="Label" parent="PointsPanel"]
+layout_mode = 0
 offset_left = 34.0
 offset_right = 439.0
 offset_bottom = 29.0
 text = "0"
 vertical_alignment = 1
 
+[node name="Upgrades" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("5_3dxm6")
+
+[node name="AttackUpgrade" parent="Upgrades" node_paths=PackedStringArray("main") instance=ExtResource("5_fos0i")]
+layout_mode = 0
+offset_left = 890.0
+offset_top = 330.0
+offset_right = 930.0
+offset_bottom = 370.0
+focus_previous = NodePath("../../StartButton")
+theme = null
+max = 1
+main = NodePath("../..")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 462.0
+offset_top = 287.0
+offset_right = 690.0
+offset_bottom = 388.0
+focus_neighbor_right = NodePath("../Upgrades/AttackUpgrade")
+focus_next = NodePath("../Upgrades/AttackUpgrade")
+text = "LOOP!"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 714.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 62.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 437.0
+offset_bottom = 60.0
+horizontal_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
 [connection signal="area_entered" from="The Grid/Player" to="." method="_on_player_area_entered"]
+[connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

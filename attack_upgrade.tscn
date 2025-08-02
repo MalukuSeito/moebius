@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://xmjsrie252h5"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_vjpte"]
+[ext_resource type="Script" uid="uid://mf7tqbabte3s" path="res://attack_upgrade.gd" id="2_ocamc"]
+[ext_resource type="Texture2D" uid="uid://c5pp4vhpdwfjr" path="res://Attack.png" id="3_ln4mb"]
+
+[node name="AttackUpgrade" instance=ExtResource("1_vjpte")]
+icon = ExtResource("3_ln4mb")
+script = ExtResource("2_ocamc")
+bonus = 1.0
+base_point_cost = 10
+cost_scale = 0.5
