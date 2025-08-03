@@ -16,7 +16,7 @@ func cost() -> String:
 	return "%d Laser Coins" % (base_point_cost+count*base_point_cost*cost_scale)
 	
 func valueFormatted(c: int)->String:
-	return "Lasers have %d%% more range" % (bonus*c/100)
+	return "Damage reduced by %d%%" % (bonus*c*100.0)
 
 func avail() -> bool:
 	return dependendable() && base_point_cost + count * base_point_cost * cost_scale <= main.green_points

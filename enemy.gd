@@ -32,9 +32,13 @@ func _physics_process(delta:float):
 	collision_mask = 0
 	
 func damage(d:float)->float:
+	if hp <= 0:
+		return -d;
 	if max_hp <= 0:
 		max_hp = hp;
 	hp-=d
+	if main.vampiric > 0:
+		main.vamp(d)
 	if hp <= 0:
 		queue_free()
 		if main != null:

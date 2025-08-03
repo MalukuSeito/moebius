@@ -34,12 +34,12 @@ func cost() ->String:
 
 func textTitle()-> String:
 	if (max < 0):
-		return "%s %d" % [title, (count+1)]
+		return "%s Level %d" % [title, (count+1)]
 	else:
 		if (count >= max):
-			return "%s MAX (%d)" % [title, (count+1)]
+			return "%s MAX Level %d" % [title, (count)]
 		else:
-			return "%s (%d/%d)" % [title, (count+1), max]
+			return "%s Level %d/%d" % [title, (count+1), max]
 		
 
 func text() -> String:

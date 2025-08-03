@@ -10,9 +10,15 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Moebius"
+config/description="Defend your Loop"
+config/version="1"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 

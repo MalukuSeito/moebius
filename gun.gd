@@ -5,7 +5,7 @@ extends Area2D
 var speed: Vector2 = Vector2(0, -0.5);
 
 @export
-var target:Node2D = null;
+var main:Main = null;
 
 @export
 var damage:float = 2;
@@ -40,4 +40,8 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is Enemy: 
 		var e = area as Enemy
 		e.damage(damage)
+		if main.laserExplosion > 0:
+			main.fire_laser(position, show_behind_parent, main.laserExplosion)
+		if main.explosion_size > 0:
+			main.spawn_explosion(position, show_behind_parent, main.explosion_size)
 		queue_free();

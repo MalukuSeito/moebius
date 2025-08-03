@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4d2bphxsersj"]
+
+[ext_resource type="Script" uid="uid://c3loabmek027e" path="res://boss.gd" id="1_6xxrv"]
+[ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="2_skx2t"]
+
+[node name="Boss" type="Area2D"]
+script = ExtResource("1_6xxrv")
+hp = 50.0
+metadata/_custom_type_script = "uid://dyoqp08g3xcom"
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+modulate = Color(0.217404, 0.127614, 0.757, 1)
+texture = ExtResource("2_skx2t")
+polygon = PackedVector2Array(-4, 2, -2, 4, 2, 4, 4, 2, 4, -2, 2, -4, -2, -4, -4, -2)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -2, -4, 2, -2, 4, 2, 4, 4, 2, 4, -2, 2, -4, -2, -4)

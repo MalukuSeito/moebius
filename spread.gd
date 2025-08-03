@@ -16,7 +16,7 @@ func cost() -> String:
 	return "%d Blue Credits" % (base_point_cost+count*base_point_cost*cost_scale)
 	
 func valueFormatted(c: int)->String:
-	return "+%d extra projectiles" % (bonus*c)
+	return "+%d additional projectiles" % (bonus*c*2)
 
 func avail() -> bool:
 	return dependendable() && base_point_cost + count * base_point_cost * cost_scale <= main.base_points

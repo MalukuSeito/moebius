@@ -8,6 +8,7 @@ extends Upgrade
 
 func apply() -> void:
 	main.spawnrate *=((bonus-1)*count)+1
+	main.max_spawn += count;
 
 func pay() -> void:
 	main.base_points -= base_point_cost+count*base_point_cost*cost_scale

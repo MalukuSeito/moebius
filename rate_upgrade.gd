@@ -7,7 +7,7 @@ extends Upgrade
 @export var cost_scale:float = 2
 
 func apply() -> void:
-	main.fire_rate *=((bonus-1)*count)+1
+	main.fire_rate /=((bonus-1)*count)+1
 
 func pay() -> void:
 	main.base_points -= base_point_cost+count*base_point_cost*cost_scale

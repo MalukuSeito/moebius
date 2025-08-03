@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddbn8ibre2fsk"]
+
+[ext_resource type="Script" uid="uid://dr3kqac1bcxd" path="res://explosion.gd" id="1_vxas0"]
+[ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="2_j4sxf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j4sxf"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vxas0"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vxas0"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 55.843
+orbit_velocity_min = -0.138
+orbit_velocity_max = 0.115
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 23.78
+scale_min = 10.0
+scale_max = 10.0
+color = Color(1, 0.32549, 0.235294, 0.494118)
+hue_variation_min = -0.13
+hue_variation_max = 0.1
+anim_speed_max = 1.56
+
+[node name="Explosion" type="Area2D"]
+material = SubResource("CanvasItemMaterial_j4sxf")
+script = ExtResource("1_vxas0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-3, 6, 3, 6, 6, 0, 3, -6, -3, -6, -6, 0)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_vxas0")
+amount = 50
+texture = ExtResource("2_j4sxf")
+lifetime = 0.26
+process_material = SubResource("ParticleProcessMaterial_vxas0")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+self_modulate = Color(0.69966, 0.410445, 0.0255582, 1)
+texture = ExtResource("2_j4sxf")
+polygon = PackedVector2Array(-3, -6, -6, 0, -3, 6, 3, 6, 6, 0, 3, -6)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

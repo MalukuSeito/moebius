@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://prjfawa8b3l6"]
+
+[ext_resource type="Script" uid="uid://c221mngkdmgg1" path="res://laser.gd" id="2_6vqwg"]
+[ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="2_g6b45"]
+
+[node name="Laser" type="Polygon2D"]
+self_modulate = Color(0.708769, 0.194622, 0.802754, 1)
+texture = ExtResource("2_g6b45")
+polygon = PackedVector2Array(-1, -2, -1, 0, 1, 0, 1, -2)
+script = ExtResource("2_6vqwg")

@@ -7,7 +7,7 @@ extends Upgrade
 @export var cost_scale:float = 10
 
 func apply() -> void:
-	main.laser_reach += bonus*count
+	main.boss_spawn_rate += bonus*count
 
 func pay() -> void:
 	main.green_points -= base_point_cost+count*base_point_cost*cost_scale
