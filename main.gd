@@ -35,6 +35,9 @@ var green_points: float = 0;
 var player = $"The Grid/Player"
 
 @onready
+var body = $"The Grid/Player/Body"
+
+@onready
 var grid = $"The Grid";
 
 @onready
@@ -131,8 +134,8 @@ func move_player(delta:float) -> void:
 		player.position.x = 0.75
 	if player.position.x > 1.17:
 		player.position.x = 1.17
-	player.collision_layer = 2 if player.show_behind_parent else 1
-	player.collision_mask = 8 if player.show_behind_parent else 4
+	body.collision_layer = 2 if player.show_behind_parent else 1
+	body.collision_mask = 8 if player.show_behind_parent else 4
 	magnet.collision_mask = 32 if player.show_behind_parent else 16
 
 func check_spawn(delta:float) -> void:
@@ -203,11 +206,11 @@ func spawn() -> void:
 	e.position = player.position+offset;
 	e.speed+=-offset*0.25;
 	e.show_behind_parent = !player.show_behind_parent
-	e.collision_mask = player.collision_layer
-	e.collision_layer = player.collision_mask
+	e.collision_mask = body.collision_layer
+	e.collision_layer = body.collision_mask
 	e.scale=Vector2(0.01, 0.01);
 	e.target=player;
-	e.hp*=difficulty*level.value
+	e.hp*=difficulty*pow(1.5, level.value)
 	e.main = self
 	grid.call_deferred("add_child", e)
 	
@@ -217,11 +220,11 @@ func spawn_boss() -> void:
 	e.position = player.position+offset;
 	e.speed = Vector2(offset.x*0.25, -game_speed)
 	e.show_behind_parent = !player.show_behind_parent
-	e.collision_mask = player.collision_layer
-	e.collision_layer = player.collision_mask
+	e.collision_mask = body.collision_layer
+	e.collision_layer = body.collision_mask
 	e.scale=Vector2(0.01, 0.01);
 	e.target=player;
-	e.hp*=difficulty*level.value
+	e.hp*=difficulty*pow(1.5, level.value)
 	e.main = self
 	grid.call_deferred("add_child", e)
 

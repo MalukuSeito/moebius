@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://r07e3j4g5214"]
+[gd_scene load_steps=82 format=3 uid="uid://r07e3j4g5214"]
 
 [ext_resource type="Texture2D" uid="uid://b4hk52i8lj0sw" path="res://tex.png" id="1_glv2v"]
 [ext_resource type="Script" uid="uid://cqhriew4g5l1d" path="res://main.gd" id="1_uu6xs"]
@@ -77,6 +77,9 @@ diffuse_texture = ExtResource("2_r0du0")
 texture_filter = 2
 texture_repeat = 3
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xncey"]
+radius = 0.0134371
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_r0du0"]
 radius = 0.0134371
 
@@ -117,7 +120,7 @@ texture = SubResource("CanvasTexture_r0du0")
 texture_scale = Vector2(2000, 2000)
 polygon = PackedVector2Array(0.736667, 0, 0.736667, 1.07833, 1.185, 1.07833, 1.185, 0)
 
-[node name="Player" type="Area2D" parent="The Grid"]
+[node name="Player" type="Node2D" parent="The Grid"]
 position = Vector2(0.96, 1.04)
 
 [node name="Image" type="Polygon2D" parent="The Grid/Player"]
@@ -126,13 +129,15 @@ scale = Vector2(2, 2)
 texture = ExtResource("1_glv2v")
 polygon = PackedVector2Array(-0.00666654, 0, -0.00666666, 0.0233334, 0, 0.02, 0.00666666, 0.0233333, 0.00666678, 0, 1.19209e-07, -0.00666666)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="The Grid/Player"]
-position = Vector2(0, 0.02)
-shape = SubResource("CircleShape2D_r0du0")
-
 [node name="Area2D" type="Area2D" parent="The Grid/Player"]
 
 [node name="Coin Shape" type="CollisionShape2D" parent="The Grid/Player/Area2D"]
+position = Vector2(0, 0.02)
+shape = SubResource("CircleShape2D_xncey")
+
+[node name="Body" type="Area2D" parent="The Grid/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="The Grid/Player/Body"]
 position = Vector2(0, 0.02)
 shape = SubResource("CircleShape2D_r0du0")
 
@@ -843,8 +848,7 @@ icon = SubResource("AtlasTexture_nn00d")
 bonus = 1.0
 base_point_cost = 50
 cost_scale = 0.5
-count = 5
-max = 5
+max = 10
 dependsOn = NodePath("../Speed1")
 main = NodePath("../..")
 
@@ -1277,9 +1281,9 @@ text_overrun_behavior = 3
 
 [node name="Panel2" type="Panel" parent="."]
 offset_left = 1.0
-offset_top = 204.0
+offset_top = 166.0
 offset_right = 445.0
-offset_bottom = 239.0
+offset_bottom = 201.0
 
 [node name="Label" type="Label" parent="Panel2"]
 layout_mode = 0
@@ -1291,9 +1295,9 @@ clip_text = true
 text_overrun_behavior = 3
 
 [node name="LevelPanel" type="Panel" parent="."]
-offset_top = 133.0
+offset_top = 95.0
 offset_right = 440.0
-offset_bottom = 199.0
+offset_bottom = 161.0
 
 [node name="SpinBox" type="SpinBox" parent="LevelPanel"]
 layout_mode = 0
@@ -1351,8 +1355,8 @@ focus_next = NodePath("../../StartButton")
 focus_previous = NodePath("../../StartButton")
 text = "+"
 
-[connection signal="area_entered" from="The Grid/Player" to="." method="_on_player_area_entered"]
 [connection signal="area_entered" from="The Grid/Player/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="The Grid/Player/Body" to="." method="_on_player_area_entered"]
 [connection signal="mouse_entered" from="StartButton" to="." method="_on_start_button_mouse_entered"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="LevelPanel/LevelDown" to="." method="_on_level_down_pressed"]
