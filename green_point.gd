@@ -32,7 +32,7 @@ func _physics_process(delta:float):
 		else:
 			swapped = true
 			show_behind_parent = !show_behind_parent
-	collision_layer = 8 if show_behind_parent else 4
+	collision_layer = 32 if show_behind_parent else 16
 	collision_mask = 0
 	if origscale.x==0:
 		origscale.x = scale.x;

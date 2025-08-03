@@ -9,14 +9,14 @@ var difficulty_scale: float = 0.02
 var fire_rate:float = 1
 var last_fire:float = 0
 var projectile_speed:float = 1
-var multiplier: int = 100
+var multiplier: int = 1
 var game_speed: float = 0.4
 var health_regen: float = 0
 var green_multiplier: int = 0
 var armor: float = 1
-var laser_count:int = 2
+var laser_count:int = 0
 var laser_reach:float = 1
-var multishot:int = 3
+var multishot:int = 0
 var explosion_size:float = 1
 var boss_spawn_rate:float = 0.5
 var laserExplosion:int = 0
@@ -28,8 +28,8 @@ var max_spawn = 0
 
 var health:float = 10;
 var max_health:float = 10;
-var base_points: float = 40000;
-var green_points: float = 40000;
+var base_points: float = 0;
+var green_points: float = 0;
 
 @onready
 var player = $"The Grid/Player"
@@ -85,6 +85,13 @@ var greenpointspanel = $GreenPoints
 var greenpoints = $GreenPoints/Points
 
 @onready
+var magnet = $"The Grid/Player/Area2D"
+
+@onready
+var magnetShape = $"The Grid/Player/Area2D/Coin Shape"
+
+
+@onready
 var upgrades = $Upgrades
 
 @onready
@@ -126,6 +133,7 @@ func move_player(delta:float) -> void:
 		player.position.x = 1.17
 	player.collision_layer = 2 if player.show_behind_parent else 1
 	player.collision_mask = 8 if player.show_behind_parent else 4
+	magnet.collision_mask = 32 if player.show_behind_parent else 16
 
 func check_spawn(delta:float) -> void:
 	if randf() < (spawnrate*(0.6+game_speed))*delta:
@@ -227,6 +235,7 @@ func spawn_projectile(offset:float) -> void:
 	e.speed*=projectile_speed
 	e.speed-=Vector2(0, game_speed)
 	e.speed.x+=offset
+	e.damage *= damage
 	grid.call_deferred("add_child", e)
 
 func vamp(d:float)->void:
@@ -295,18 +304,6 @@ func _on_player_area_entered(area: Area2D) -> void:
 			health-=e.hp*armor
 			updateHP()
 			e.queue_free();
-		elif area is PointScore:
-			var p = area as PointScore
-			base_points += p.value
-			updatePoints()
-			checkUpgrades()
-			p.queue_free()
-		elif area is GreenScore:
-			var p = area as GreenScore
-			green_points += p.value
-			updateGreenPoints()
-			checkUpgrades()
-			p.queue_free()
 		
 func updateHP() -> void:
 	if health < 0:
@@ -384,14 +381,14 @@ func updateInfo() -> void:
 	if spawnrate > 0.4:
 		lines.push_back("Spawnrate: %.1f%%" % (spawnrate*100))
 	if damage > 1:
-		lines.push_back("Damage: %.1f" % damage)
+		lines.push_back("Damage: %d%%" % (damage*100))
 	if fire_rate < 1:
 		lines.push_back("Fire-Rate %.1f%%" % (1/fire_rate*100))
 	if projectile_speed > 1:
 		lines.push_back("Projectile Speed: %.1f%%" % (projectile_speed*100))
 	if multiplier > 1:
 		lines.push_back("Salvage Multiplier: %d" % multiplier)
-	if green_multiplier > 1:
+	if green_multiplier > 0:
 		lines.push_back("Coin Multiplier: %d" % green_multiplier)
 	if health_regen > 0:
 		lines.push_back("Health Regen: %.1f%%" % (health_regen*100))
@@ -400,7 +397,7 @@ func updateInfo() -> void:
 	if laser_count > 0:
 		lines.push_back("Lasers: %d" % laser_count)
 	if laser_reach > 1:
-		lines.push_back("Bonus Laser Distance: %d" % ((laser_reach-1)*100))
+		lines.push_back("Bonus Laser Distance: %d%%" % ((laser_reach-1)*100))
 	if multishot > 0:
 		lines.push_back("Gun Turrets: %d" % (multishot*2+1))
 	if explosion_size > 0:
@@ -413,6 +410,8 @@ func updateInfo() -> void:
 		lines.push_back("Extra Lifes: %d" % lifes)
 	if vampiric > 0:
 		lines.push_back("Heal on Hit: %.1f%%" % (vampiric*100))
+	if magnetShape.shape.radius > 0.01:
+		lines.push_back("Bonus Pickup Distance: %d%%" % ((magnetShape.shape.radius/0.01-1)*100))
 	if !lines.is_empty():
 		infopanel.visible = true
 		infopanel.size.y = lines.size()*26+2
@@ -455,3 +454,28 @@ func apply_upgrades()->void:
 	for child in upgrades.get_children():
 		child.apply()
 	
+
+func _on_level_down_pressed() -> void:
+	if level.value > level.min_value:
+		level.value -= 1
+
+
+func _on_level_up_pressed() -> void:
+	if level.value < level.max_value:
+		level.value += 1
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if running:
+		if area is PointScore:
+			var p = area as PointScore
+			base_points += p.value
+			updatePoints()
+			checkUpgrades()
+			p.queue_free()
+		elif area is GreenScore:
+			var p = area as GreenScore
+			green_points += p.value
+			updateGreenPoints()
+			checkUpgrades()
+			p.queue_free()

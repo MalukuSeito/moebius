@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjr5bepcice1s"]
+
+[ext_resource type="PackedScene" uid="uid://c30cy572ia76c" path="res://upgrade.tscn" id="1_d1rpa"]
+[ext_resource type="Script" uid="uid://djhflpsycd2hc" path="res://magnet.gd" id="2_d1rpa"]
+
+[node name="MagnetUpgrade" instance=ExtResource("1_d1rpa")]
+script = ExtResource("2_d1rpa")
+bonus = 0.5
+base_point_cost = 25
+cost_scale = 10.0

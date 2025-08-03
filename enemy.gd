@@ -42,7 +42,7 @@ func damage(d:float)->float:
 	if hp <= 0:
 		queue_free()
 		if main != null:
-			var val:float = clampf((log(max_hp)/log(10)), 1, 100) 
+			var val:float = clampf((log(max_hp)), 1, 100) 
 			main.spawn_point(position, show_behind_parent, 1, int(val))
 		return -hp
 	else:
